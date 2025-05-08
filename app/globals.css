@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Fira+Code:wght@300;400;500&family=Inter:wght@300;400;500&display=swap');
 
 @tailwind base;
@@ -21,12 +22,6 @@
     --ring: 155 100% 50%;
     --radius: 0.5rem;
   }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
@@ -36,11 +31,11 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-orbitron tracking-wide;
+    @apply font-['Orbitron'] tracking-wide;
   }
 
   code, pre {
-    @apply font-fira;
+    @apply font-['Fira_Code'];
   }
 }
 
