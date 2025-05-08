@@ -10,22 +10,6 @@ export default function LewisifUI() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#0a0a0e] text-white font-mono">
-      {/* Header */}
-      <header className="border-b border-[#00ff9d]/30 p-4 flex justify-between items-center">
-        <div className="text-[#00ff9d] text-2xl font-bold">@lewisif</div>
-        <nav className="flex gap-6">
-          <Link href="#" className="text-[#00ff9d] hover:text-[#00ff9d]/80">
-            HOME
-          </Link>
-          <Link href="#" className="text-gray-300 hover:text-white">
-            ABOUT
-          </Link>
-          <Link href="#" className="text-gray-300 hover:text-white">
-            LOG IN
-          </Link>
-        </nav>
-      </header>
-
       {/* Main Content */}
       <main className="flex-1 p-4 grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Left Column - Character Profile */}
@@ -248,54 +232,6 @@ export default function LewisifUI() {
           </div>
         </div>
       </main>
-
-      {/* Footer Navigation */}
-      <footer className="border-t border-[#00ff9d]/30 p-2">
-        <div className="flex justify-around">
-          <button
-            className={`flex flex-col items-center p-2 ${activeTab === "home" ? "text-[#00ff9d]" : "text-gray-500"}`}
-            onClick={() => setActiveTab("home")}
-          >
-            <Home size={20} />
-            <span className="text-xs mt-1">HOME</span>
-          </button>
-          <button
-            className={`flex flex-col items-center p-2 ${activeTab === "faltas" ? "text-[#00ff9d]" : "text-gray-500"}`}
-            onClick={() => setActiveTab("faltas")}
-          >
-            <Calendar size={20} />
-            <span className="text-xs mt-1">FALTAS</span>
-          </button>
-          <button
-            className={`flex flex-col items-center p-2 ${activeTab === "notas" ? "text-[#00ff9d]" : "text-gray-500"}`}
-            onClick={() => setActiveTab("notas")}
-          >
-            <FileText size={20} />
-            <span className="text-xs mt-1">NOTAS</span>
-          </button>
-          <button
-            className={`flex flex-col items-center p-2 ${activeTab === "progresso" ? "text-[#00ff9d]" : "text-gray-500"}`}
-            onClick={() => setActiveTab("progresso")}
-          >
-            <BarChart2 size={20} />
-            <span className="text-xs mt-1">PROGRESSO</span>
-          </button>
-          <button
-            className={`flex flex-col items-center p-2 ${activeTab === "analytics" ? "text-[#00ff9d]" : "text-gray-500"}`}
-            onClick={() => setActiveTab("analytics")}
-          >
-            <Activity size={20} />
-            <span className="text-xs mt-1">ANALYTICS</span>
-          </button>
-          <button
-            className={`flex flex-col items-center p-2 ${activeTab === "developer" ? "text-[#00ff9d]" : "text-gray-500"}`}
-            onClick={() => setActiveTab("developer")}
-          >
-            <Code size={20} />
-            <span className="text-xs mt-1">DEVELOPER</span>
-          </button>
-        </div>
-      </footer>
     </div>
   )
 }
