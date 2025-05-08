@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="pt">
       <body className={`${inter.className} min-h-screen text-white dark`}>
         <ThemeProvider
           attribute="class"
