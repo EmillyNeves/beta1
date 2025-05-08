@@ -9,7 +9,7 @@ export default function LewisifUI() {
   const [activeTab, setActiveTab] = useState("home")
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0a0a0e] text-white font-mono">
+    <div className="min-h-screen flex flex-col bg-[#0a0a20] text-white font-mono">
       {/* Main Content */}
       <main className="flex-1 p-4 grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Left Column - Character Profile */}
