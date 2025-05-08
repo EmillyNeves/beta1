@@ -4,6 +4,24 @@ import { useState } from "react"
 import { Home, Calendar, FileText, BarChart2, Activity, Code } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { motion } from 'framer-motion';
+
+const TypingText = ({ text, className, delay = 0 }) => {
+  const [displayedText, setDisplayedText] = useState('');
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (displayedText.length < text.length) {
+        setDisplayedText(prevText => prevText + text[prevText.length]);
+      } else {
+        clearInterval(interval);
+      }
+    }, 50); // Adjust typing speed here
+
+    return () => clearInterval(interval);
+  }, [text, delay]);
+
+  return <span className={className}>{displayedText}</span>;
+};
 
 export default function LewisifUI() {
   const [activeTab, setActiveTab] = useState("home")
@@ -144,14 +162,54 @@ export default function LewisifUI() {
         {/* Middle Column - Grad Navigator */}
         <div className="border border-[#00ff9d]/30 rounded-md p-6 flex flex-col">
           <div className="text-center mb-8">
-            <h1 className="text-[#00ff9d] text-6xl font-bold tracking-wider">GRAD</h1>
-            <h1 className="text-[#00ff9d] text-6xl font-bold tracking-wider">NAVIGATOR</h1>
+            <motion.div
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <TypingText 
+                text="GRAD"
+                className="text-[#00ff9d] text-6xl font-bold tracking-wider block"
+              />
+              <TypingText 
+                text="NAVIGATOR"
+                className="text-[#00ff9d] text-6xl font-bold tracking-wider block"
+                delay={500}
+              />
+            </motion.div>
           </div>
 
           <div className="space-y-6 text-gray-300">
-            <p>Transforme sua jornada acadêmica em uma experiência dinâmica e interativa.</p>
-            <p>Uma plataforma gamificada que monitora seus dados acadêmicos, visualiza conquistas e requisitos.</p>
-            <p>Complete desafios, acumule XP, suba de nível e desbloqueie novas habilidades.</p>
+            <motion.p
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 1.2 }}
+            >
+              <TypingText 
+                text="Transforme sua jornada acadêmica em uma experiência dinâmica e interativa."
+                delay={1000}
+              />
+            </motion.p>
+            <motion.p
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 1.8 }}
+            >
+              <TypingText 
+                text="Uma plataforma gamificada que monitora seus dados acadêmicos, visualiza conquistas e requisitos."
+                delay={2000}
+              />
+            </motion.p>
+            <motion.p
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 2.4 }}
+            >
+              <TypingText 
+                text="Complete desafios, acumule XP, suba de nível e desbloqueie novas habilidades."
+                delay={3000}
+              />
+            </motion.p>
           </div>
 
           <div className="flex-1 flex items-center justify-center mt-4">
@@ -299,3 +357,5 @@ export default function LewisifUI() {
     </div>
   )
 }
+
+import { useEffect } from 'react';
